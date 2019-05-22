@@ -48,6 +48,13 @@ defmodule JsonPlaceholder.API.Base do
     |> handle_response()
   end
 
+  def delete(path) do
+    path
+    |> build_uri()
+    |> HTTPClient.delete()
+    |> handle_response()
+  end
+
   # TODO: If we really want to abstract out our http client, we'll need to wrap it in
   # an implementation of a behaviour to ensure that the args passed to a method like
   # handle_response/1 are all the same
