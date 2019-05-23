@@ -1,4 +1,10 @@
 defmodule JsonPlaceholder.API.Response do
+  @moduledoc """
+  A module representing a generic http response providing methods for working with
+  the response. This module is designed to normalize the API response format
+  across different client implementations
+  """
+
   # TODO: likely will need to add response headers
   defstruct [:error, :raw_body, :parsed_body, :message, :status_code]
 
