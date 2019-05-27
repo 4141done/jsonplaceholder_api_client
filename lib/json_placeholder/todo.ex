@@ -2,10 +2,15 @@ defmodule JsonPlaceholder.Todo do
   @path_base "todos"
   alias JsonPlaceholder.API.Base, as: API
 
-  def all() do
-    API.get(@path_base)
+  @spec all(map()) :: %JsonPlaceholder.API.Response{}
+  def all(query \\ %{}) do
+    API.get(@path_base, query)
   end
 
+  @doc """
+  Get a single todo by `id`.
+  """
+  @spec get(term(), map()) :: %JsonPlaceholder.API.Response{}
   def get(id) do
     API.get("#{@path_base}/#{inspect(id)}")
   end

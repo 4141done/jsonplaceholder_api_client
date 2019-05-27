@@ -22,6 +22,8 @@ the library to use in order to avoid taking on an Httpoison dependency.
 - [] Allow one-time configuration of headers
 - [] Support adding a "target term" to decode json into
 - [X] Abstract http client away
+- [] Do post and put requests
+- [] Figure out a better way to deal with related entities
 - [] Allow turning on CURL debug output
 - [] Play creating a generic API client with target terms like so `Client.index(%ClientConfig{host: "foo", endpoint_map: %{}}, :posts, params, target_term)`
 - [] Try create an internal client-like library (circuit breaking, configurable retries, configurable timeouts)
